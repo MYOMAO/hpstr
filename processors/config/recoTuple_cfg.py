@@ -6,8 +6,8 @@ from baseConfig import bfield
 
 base.parser.add_argument("-w", "--tracking", type=str, dest="tracking",
                          help="Which tracking to use to make plots", metavar="tracking", default="KF")
-base.parser.add_argument("-s", "--truthHits", type=int, dest="truthHits",
-                         help="Get svt truth hits: 1=yes", metavar="truthHits", default=0)
+#base.parser.add_argument("-s", "--truthHits", type=int, dest="truthHits",
+ #                       help="Get svt truth hits: 1=yes", metavar="truthHits", default=0)
 base.parser.add_argument("-r", "--rawHits", type=int, dest="rawHits",
                          help="Keep raw svt hits: 1=yes", metavar="rawHits", default=0)
 
@@ -163,8 +163,9 @@ if (options.tracking == "KF"):
     print("KF")
     sequence = [header, vtx, cvtx, ecal, track]
     # Get KF svt truth hits
-    if (options.truthHits > 0):
-        sequence.append(svthits)
+    #if (options.truthHits > 0):
+    if ( 1 > 2 ):    
+     sequence.append(svthits)
 elif (options.tracking == "GBL"):
     print("GBL")
     sequence = [header, vtxgbl, cvtxgbl, ecal, trackgbl]
